@@ -2,15 +2,16 @@
 - name: create zookeeper Directory
   become: true
   file:
-    name: /opt/zookeeper-sources
+    name: /opt/zookeeper/sources
     owner: root
     group: root
     state: directory
+    recurse: yes
     
 - name: Download Zookeeper
   become: true
   get_url:
-    dest: /opt/zookeeper-sources/{{zookeeper_tarball}}
+    dest: /opt/zookeeper/sources/{{zookeeper_tarball}}
     group: root
     owner: root
     url: "{{ zookeeper_url }}"
@@ -18,15 +19,15 @@
 - name: Decompress file
   become: true
   unarchive:
-    src: /opt/zookeeper-sources/{{zookeeper_tarball}}
-    dest: /opt/zookeeper-sources/
-    creates: /opt/zookeeper-sources/{{zookeeper_plus_version}}
+    src: /opt/zookeeper/sources/{{zookeeper_tarball}}
+    dest: /opt/zookeeper/sources/
+    creates: /opt/zookeepr/sources/{{zookeeper_plus_version}}
 
 - name: Symlink to /opt/zookeeper
   become: true
   file:
-    src: /opt/zookeeper-sources/{{zookeeper_plus_version}}
-    dest: /opt/zookeeper
+    src: /opt/zookeeper/sources/{{zookeeper_plus_version}}
+    dest: /opt/zookeeper/current
     state: link
     owner: root
     group: root
