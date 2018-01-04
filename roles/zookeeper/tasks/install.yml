@@ -21,7 +21,7 @@
   unarchive:
     src: /opt/zookeeper/sources/{{zookeeper_tarball}}
     dest: /opt/zookeeper/sources/
-  creates: /opt/zookeepr/sources/{{zookeeper_plus_version}}
+    creates: /opt/zookeepr/sources/{{zookeeper_plus_version}}
 
 - name: Symlink to /opt/zookeeper
   become: true
@@ -34,7 +34,7 @@
 
 - name: Install systemd Unit File
   become: true
-  file:
+  copy:
     src: zookeeper.service
     dest: /etc/systemd/system/
     owner: root
