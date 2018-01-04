@@ -10,5 +10,5 @@
       yum:
         name: "{{ item }}"
         state: installed
-      with-items:
+      with_items:
         - "java-1.8.0-openjdk-headless"
