@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+    - name: Ensure EPEL is installed
+      yum:
+        name: epel-release
+        state: latest
+
+    - name: Install various packages
+      yum:
+        name: "{{ item }}"
+        state: installed
+      with-items:
+        - "java-1.8.0-openjdk-headless"
