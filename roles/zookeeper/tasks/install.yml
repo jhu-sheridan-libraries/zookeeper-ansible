@@ -37,6 +37,7 @@
     name: zookeeper
     comment: Zookeeper User
     shell: /bin/false
+    system: true
     
 - name: Install systemd Unit File
   become: true
