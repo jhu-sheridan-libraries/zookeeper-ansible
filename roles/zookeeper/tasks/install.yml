@@ -36,7 +36,7 @@
   become: true
   file:
     src: zookeeper.service
-    dest: /etc/systemd/system/zookeeper.service
+    dest: /etc/systemd/system/
     owner: root
     group: root
     mode: 0644
