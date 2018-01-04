@@ -1,0 +1,16 @@
+---
+- name: create zookeeper Directory
+  become: true
+  file:
+    name: /opt/zookeeper
+    owner: root
+    group: root
+    state: directory
+    
+- name: Download Zookeeper
+  become: true
+  get_url:
+    dest: /opt/zookeeper/{{zookeeper_tarball}}
+    group: root
+    owner: root
+    url: {{ zookeeper_url }}
