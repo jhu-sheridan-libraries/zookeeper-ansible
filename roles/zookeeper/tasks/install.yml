@@ -41,3 +41,10 @@
     group: root
     mode: 0644
 
+- name: Zookeeper service
+  systemd:
+    daemon_reload: yes
+    enabled: yes
+    name: zookeeper
+    state: started
+
