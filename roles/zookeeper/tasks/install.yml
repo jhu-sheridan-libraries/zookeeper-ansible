@@ -32,6 +32,12 @@
     owner: root
     group: root
 
+- name: Create zookeeper user
+  user:
+    name: zookeeper
+    comment: Zookeeper User
+    shell: /bin/false
+    
 - name: Install systemd Unit File
   become: true
   copy:
