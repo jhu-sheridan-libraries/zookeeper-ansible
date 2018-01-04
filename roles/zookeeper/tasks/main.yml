@@ -1,2 +1,2 @@
 ---
-- import_playbook: install.yml
+- import_tasks: install.yml
