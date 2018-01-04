@@ -13,4 +13,4 @@
     dest: /opt/zookeeper/{{zookeeper_tarball}}
     group: root
     owner: root
-    url: {{ zookeeper_url }}
+    url: "{{ zookeeper_url }}"
