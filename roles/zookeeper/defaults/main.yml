@@ -2,7 +2,7 @@
 zookeeper_version: 3.4.10
 zookeeper_download_location: http://http://apache.mirrors.pair.com/zookeeper/
 
-zookeeper_plus_version: zookeeper-{{zookeeper_version}}
-zookeeper_tarball: {{zookeeper_plus_version}}.tar.gz
-zookeeper_url: {{zookeeper_download_location}}/{{zookeeper_tarball}}
+zookeeper_plus_version: "zookeeper-{{zookeeper_version}}"
+zookeeper_tarball: "{{zookeeper_plus_version}}.tar.gz"
+zookeeper_url: "{{zookeeper_download_location}}/{{zookeeper_tarball}}"
 
